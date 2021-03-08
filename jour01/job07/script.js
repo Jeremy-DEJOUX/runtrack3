@@ -1,5 +1,5 @@
 function jourtravaille(date) {
-  let travailoupas = "jour travaillé";
+  let jobday = "jour travaillé";
 
   const joursferies = [
     new Date(2020, 0, 1),
@@ -19,15 +19,15 @@ function jourtravaille(date) {
   // date.format("{Month:2}-{Date:2}-{FullYear}"); // mm-dd-yyyy
 
   if (date.getDay() == 0 || date.getDay() == 6) {
-    travailoupas = "weekend";
+    jobday = "weekend";
   }
 
   for (i = 0; i < joursferies.length; i++) {
     if (date.getTime() == joursferies[i].getTime()) {
-      travailoupas = "joursferies";
+      jobday = "joursferies";
     }
   }
-  return travailoupas;
+  return jobday;
 }
 
 var mois = [
