@@ -8,7 +8,9 @@
 </head>
 
 <body>
+    <button id="button" onclick="showhide(button)"> Button </button>
 
+    <div id="texte" style="display: none">L'important n'est pas la chute, mais l'atterrissage.</div>
 </body>
 
 </html>
