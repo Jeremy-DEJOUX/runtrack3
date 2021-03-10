@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#shuffled {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#rangees {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
