@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="script.js"></script>
 
-    <title>Job 01</title>
+    <title>Job 02</title>
 </head>
 
 <body>
