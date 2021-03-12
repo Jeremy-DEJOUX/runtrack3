@@ -10,15 +10,13 @@
 
 <body>
     <form id="#form" action="#" method="get">
-        <div>
+        
             <label for="id">Id</label>
             <input type="text" id="id" name="id">
-        </div>
-        <div>
+        
             <label for="nom">Nom</label>
             <input type="text" id="nom" name="nom">
-        </div>
-        <div>
+        
             <label for="type">Type</label>
             <select name="type" id="type">
                 <option value="">--Choisissez une option--</option>
@@ -38,10 +36,9 @@
                 <option value="Rock">Pierre</option>
                 <option value="Bug">Insecte</option>
             </select>
-        </div>
-        <div>
+        
             <input id="filter" type="button" name="filter" value="filter">
-        </div>
+       
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>

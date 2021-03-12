@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,7 +15,14 @@
 </head>
 
 <body>
-    <button id="button">Start</button>
+    <?php 
+        if (isset($_SESSION['id'])) {
+            echo "Vous êtes connéctés";
+        }else {
+            echo "<button type='button' id='connexion'>Connexion</button> <br>
+                    <button type='button' id='inscription'>Inscription</button>";
+        }
+    ?>
 
 
     <script type="text/javascript" src="script.js"></script>
