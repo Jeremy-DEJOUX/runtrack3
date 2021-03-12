@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form id="#form"method="post" class="submit">
+    <form id="#form" action="#" method="get">
         <div>
             <label for="id">Id</label>
             <input type="text" id="id" name="id">
@@ -40,7 +40,7 @@
             </select>
         </div>
         <div>
-            <button type="submit">Filtrer</button>
+            <input id="filter" type="button" name="filter" value="filter">
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
