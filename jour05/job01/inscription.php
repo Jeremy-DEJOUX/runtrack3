@@ -1,33 +1,31 @@
-<?php ?>
+<?php
+function connect()
+{
 
-<form action="">
+    $database = new \PDO('mysql:host=localhost; dbname=utilisateurs; charset=utf8', 'root', '');
 
-    <div>
-        <label for="name">Nom</label>
-        <input type="text" name="name">
-    </div>
+    $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    <div>
-        <label for="firstname">Prénom</label>
-        <input type="text" name="firstname">
-    </div>
+    return $database;
+}
+    $db = connect();
 
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email">
-    </div>
+        $insert = $db->prepare("INSERT INTO utilisateurs (nom, prenom, password, email) VALUES (:name, :prenom, :password ,:email)");
 
-    <div>
-        <label for="password">Mot de Passe</label>
-        <input type="password" name="password">
-    </div>
+        $insert->execute([
+            ":name" => $_POST['name'],
+            ":prenom" => $_POST['first_name'],
+            ":password" => $_POST['password'],
+            ":email" => $_POST['email']
+        ]);
+        var_dump($insert);
+        if ($insert == true) {
+            echo "Success";
+            var_dump($insert);
+        }else {
+            echo "Error";
+            var_dump($insert);
+        }
+?>
 
-    <div>
-        <label for="confirmPassword">Confirmation MDP</label>
-        <input type="password" name="confirmPassword">
-    </div>
-
-    <input type="submit" value="Inscription">
-
-
-</form>
