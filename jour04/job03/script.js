@@ -1,5 +1,5 @@
 // Evenement click button
-$('#submit').submit(function (event) {
+$('.submit').submit(function (event) {
 // Requete Ajax sur pokemon.json
     $.ajax({
         url: 'pokemon.json',
