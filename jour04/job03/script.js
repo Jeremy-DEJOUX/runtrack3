@@ -13,7 +13,7 @@ $('#filter').on('click', function (event) {
 
         //For in parcourt mon objet Json
         for (let key in json) {
-                console.log(json[key]['type'])
+                // console.log(json[key]['type'])
             // Condition de Recup pokemons
             if (pkmnName === json[key]['name']['french'] || pkmnName === json[key]['name']['english'] || pkmnName === json[key]['name']['japanese'] || pkmnName === json[key]['name']['chinese']) {
                 let div = document.createElement("div")

@@ -23,8 +23,10 @@
             <select name="type" id="type">
                 <option value="">--Choisissez une option--</option>
                 <option value="Water">Eau</option>
-                <option value="Grass Poison">Poison</option>
-                <option value="Fire Fairy">Feu</option>
+                <option value="Grass">Plante</option>
+                <option value="Poison">Poison</option>
+                <option value="Fire">Feu</option>
+                <option value="Fairy">Fée</option>
                 <option value="Electric">Electrique</option>
                 <option value="Normal">Normal</option>
                 <option value="Fighting">Goldfish</option>
