@@ -1,21 +1,21 @@
 $(document).ready(function (){
 
-    $("#connexion").click(function () {
+    $("#connexion").click(function() {
         $.ajax({
             url: "connexion.php",
             method: "GET",
             data: "form",
             DataType: "html"
         })
-            .done(function(msg){
+            .done(function(connexion){
                 $("form").remove()
-                $("body").append(msg)
+                $("body").append(connexion)
 
                 $("#submit").click(function(e){
                     e.preventDefault();
             
                     $.post(
-                        'connexion.php', // Un script PHP que l'on va créer juste après
+                        'connexion.php',
                         {
                             email : $("#email").val(),
                             password : $("#password").val(),
@@ -41,16 +41,16 @@ $(document).ready(function (){
             })
     });
 
-    $("#inscription").click(function () {
+    $("#inscription").click(function() {
         $.ajax({
             url: "inscription.php",
             method: "GET",
             data: "form",
             DataType: "html"
         })
-            .done(function(msg){
+            .done(function(inscription){
                 $("form").remove()
-                $("body").append(msg)
+                $("body").append(inscription)
 
                 $("#submit").click(function(e){
                     e.preventDefault();
@@ -69,8 +69,45 @@ $(document).ready(function (){
             
                             if(data === 'Success'){
                                 // Le membre est connecté. Ajoutons lui un message dans la page HTML.
-            
-                                $("body").html("<p>Vous avez été connecté avec succès !</p>");
+                                    $.ajax({
+                                        url: "connexion.php",
+                                        method: "GET",
+                                        data: "form",
+                                        DataType: "html"
+                                    })
+                                    .done(function(connexion){
+                                            $("form").remove()
+                                            $("body").append(connexion)
+
+                                            $("#submit").click(function(def){
+                                                def.preventDefault();
+                                        
+                                                $.post(
+                                                    'connexion.php',
+                                                    {
+                                                        email : $("#email").val(),
+                                                        password : $("#password").val(),
+                                                    },
+                                        
+                                                    function(data){
+                                        
+                                                        if(data === 'Success'){
+                                                            // Le membre est connecté. Ajoutons lui un message dans la page HTML.
+                                        
+                                                            $("body").html("<p>Vous avez été connecté avec succès !</p>");
+                                                        }
+                                                        else{
+                                                            // Le membre n'a pas été connecté. (data vaut ici "failed")
+                                        
+                                                            $("body").html("<p>Erreur lors de la connexion...</p>");
+                                                        }
+                                                
+                                                    },
+                                                    'text'
+                                                );
+                                            });
+
+                                    })
                             }
                             else{
                                 // Le membre n'a pas été connecté. (data vaut ici "failed")
