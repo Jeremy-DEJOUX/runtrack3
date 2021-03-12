@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Job 03</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
     </form>
     <div class="content">
     </div>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
