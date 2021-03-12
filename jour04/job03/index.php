@@ -40,7 +40,7 @@
             </select>
         </div>
         <div>
-            <button id="filter" type="submit" name="filter" value="filter">
+            <button id="submit" type="submit" name="filter" value="filter">
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
