@@ -23,6 +23,7 @@ if (isset($_POST['inscription'])) {
     if ($test == true) {
         echo "Success";
         return;
+         
     } else {
         return "Error";
     }
