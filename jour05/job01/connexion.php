@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function connect()
 {
 
@@ -12,19 +12,34 @@ function connect()
 }
 $db = connect();
 
+if (isset($_POST['connexion'])) {
+    $error = null;
+    $userconnect = $db->prepare("SELECT * FROM utilisateurs WHERE email = :email");
 
-$email = "b@b";
-$password = "salut";
+    $userconnect->execute([
+        ":email" => $_POST['email'],
+    ]);
+    $user = $userconnect->fetch(PDO::FETCH_ASSOC);
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-
-    if ($_POST['email'] == $email && $_POST['password'] == $password) { // Si les infos correspondent...
-        session_start();
-        $_SESSION['user'] = $email;
-        echo "Success";
-        return;
-    } else { // Sinon
-        echo "Failed";
+    if (!empty($user)){
+        if ($_POST['password'] == $user['password']){
+            $_SESSION['utilisateurs'] = [
+                'id_user' => $user['id'],
+                'mail' => $user['email']
+            ];
+            if (isset($_SESSION['utilisateurs'])) {
+                echo "Success";
+                return;
+            }
+            else{
+                return "Error";
+            }            
+        }
+        else{
+            return "Error";
+        }
+    }else{
+        return "Error";
     }
 }
 ?>

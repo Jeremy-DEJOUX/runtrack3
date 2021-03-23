@@ -21,9 +21,9 @@ $(document).ready(function (){
                             password : $("#password").val(),
                         },
             
-                        function(data){
+                        function(bou){
             
-                            if(data === 'Success'){
+                            if(bou === 'Success'){
                                 // Le membre est connecté. Ajoutons lui un message dans la page HTML.
             
                                 $("body").html("<p>Vous avez été connecté avec succès !</p>");
@@ -89,9 +89,9 @@ $(document).ready(function (){
                                                         password : $("#password").val(),
                                                     },
                                         
-                                                    function(data){
+                                                    function(response){
                                         
-                                                        if(data === 'Success'){
+                                                        if(response === 'Success'){
                                                             // Le membre est connecté. Ajoutons lui un message dans la page HTML.
                                         
                                                             $("body").html("<p>Vous avez été connecté avec succès !</p>");
